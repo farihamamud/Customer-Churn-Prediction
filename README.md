@@ -27,13 +27,12 @@ These are patterns in the data. I cannot say they are the cause of churn.
 I split the data into 80% training and 20% testing (1,409 customers, 374 of them churners).
 I compared a baseline that always predicts "stays" with three models.
 
-|             Model              | Accuracy | Churn precision | Churn recall | Churn F1 |
-  
-|    Baseline (always "stays")   |   0.73   |       0.00      |     0.00     |   0.00   |
-|       Logistic regression      |   0.81   |       0.66      |     0.57     |   0.61   |
-| Logistic regression (balanced) |   0.74   |       0.51      |     0.79     |   0.62   |
-|         Random forest          |   0.79   |       0.64      |     0.51     |   0.57   |
-
+   | Model | Accuracy | Churn precision | Churn recall | Churn F1 |
+   |---|---|---|---|---|
+   | Baseline (always "stays") | 0.73 | 0.00 | 0.00 | 0.00 |
+   | Logistic regression | 0.81 | 0.66 | 0.57 | 0.61 |
+   | Logistic regression (balanced) | 0.74 | 0.51 | 0.79 | 0.62 |
+   | Random forest | 0.79 | 0.64 | 0.51 | 0.57 |
 ## Discussion
 Accuracy is misleading here. The baseline gets 0.73 accuracy without finding any churner.
 The balanced logistic regression catches more churners (recall 0.79 against 0.57) but gives more false alarms (precision 0.51 against 0.66).
@@ -51,7 +50,7 @@ I did not tune the models.
 The data has no information about why customers left.
 
 ## How to run
-1. Download the dataset from Kaggle and put the CSV file in a folder named `data`.
+1. Download the dataset from Kaggle, rename it to Telco-Customer-Churn.csv (the original name is WA_Fn-UseC_-Telco-Customer-Churn.csv) and put it in the project folder.
 2. Install the requirements: `pip install -r requirements.txt`
 3. Run `python eda.py` for the data exploration and `python model.py` for the models.
 
